@@ -1,3 +1,4 @@
+const status = document.querySelector(".status");
 const promise = new Promise((resalve, reject) => {
     setTimeout(() => {
         console.log("Preparing data...");
@@ -8,6 +9,10 @@ const promise = new Promise((resalve, reject) => {
         }
         resalve(data);
     }, 2000);
+});
+
+promise.then(data => {
+    status.innerText = "Status: " + data.status;
 });
 
 
